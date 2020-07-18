@@ -1,0 +1,33 @@
+{
+    "orders": {
+        "live": [
+            {
+                "storeId": 123121,
+                "menus": [
+                    "menuname",
+                    "menuname2"
+                ],
+                "secondsLeft":  3000,
+                "channelId": "djflkdjkfl"
+            },
+            {
+                "storeId": 123121,
+                "menus": [
+                    "menuname",
+                    "menuname2"
+                ],
+                "secondsLeft":  3000,
+                "channelId": "djflkdjkfl"
+            }
+        ],
+        "all" : [
+            {
+                "storeId": 123121,
+                "menus": [
+                    "menuname",
+                    "menuname2"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "store": {
+        "live": [
+            {
+                "name": "STORE",
+                "address": "서울시~",
+                "phoneNumber": "02-1214-1513",
+                "category": "중식",
+                "channelId": "aaaa.bbb.ccc",
+                "storeId": 1232131,
+                "menu": [
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    },
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    }
+                ]
+            },
+            {
+                "name": "STORE",
+                "address": "서울시~",
+                "phoneNumber": "02-1214-1513",
+                "category": "중식",
+                "channelId": "aaaa.bbb.ccc",
+                "storeId": 123121,
+                "menu": [
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    },
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    }
+                ]
+            }
+        ],
+        "all" : [
+            {
+                "name": "STORE",
+                "address": "서울시~",
+                "phoneNumber": "02-1214-1513",
+                "category": "중식",
+                "channelId": null,
+                "storeId": 121321,
+                "menu": [
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    },
+                    {
+                        "name": "food1",
+                        "price": 15000,
+                        "description": "맛있",
+                        "lastCookVideoUrl": "https://sknflkf"
+                    }
+                ]
+            }
+        ]
+    }
+}

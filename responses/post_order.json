@@ -1,0 +1,9 @@
+{
+    "storeId": 123121,
+    "menus": [
+        "menuname",
+        "menuname2"
+    ],
+    "secondsLeft":  3000,
+    "ordersLeft": 14
+}

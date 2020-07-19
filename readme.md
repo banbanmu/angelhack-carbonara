@@ -1,4 +1,8 @@
-## environment
+## What it is about
+APIs for customers  
+It deals with customer orders, stores, and user credentials.
+
+## Env
 envs needed
 ```
 jwt_secret //secret_key_for_jwt

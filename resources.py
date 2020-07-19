@@ -3,6 +3,9 @@ from run import db
 from passlib.hash import pbkdf2_sha256 as sha256
 from flask_jwt_extended import (create_access_token, create_refresh_token,
                                 jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
+import requests
+import json
+import os 
 
 # TODO parser decoupling
 sup = reqparse.RequestParser()
@@ -76,21 +79,23 @@ class TokenRefresh(Resource):
 class AllStores(Resource):
     @jwt_required
     def get(self):
-        liveStores = db.orders.find({'state': 'LIVE'})
-        restStores = db.orders.find({'state': {'$ne': 'LIVE'}})
-        return {'live': {
-            'live': list(liveStores),
-            'rest': list(restStores),
+        url = os.environ['livelisturl']
+        l = requests.get(url).content
+        l = json.loads(l)
+        ss = list(db.store.find({}))
+        return {'stores': {
+            'live': l,
+            'all': list(ss),
         }}
 
 
 class AllOrders(Resource):
     @jwt_required
     def get(self):
-        liveOrders = db.orders.find({'state': 'STARTED'}, {'_id': 0})
-        restOrders = db.orders.find({'state': {'$ne': 'STARTED'}}, {'_id': 0})
-        return {'live': {
-            'live': list(liveOrders),
+        liveOrders = db.order.find({'state': 'STARTED'}, {'_id': 0})
+        restOrders = db.order.find({'state': {'$ne': 'STARTED'}}, {'_id': 0})
+        return {'orders': {
+            'started': list(liveOrders),
             'rest': list(restOrders),
         }}
 

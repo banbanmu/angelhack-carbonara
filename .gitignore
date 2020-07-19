@@ -130,3 +130,5 @@ dmypy.json
 
 # java class
 *.java
+
+env.env

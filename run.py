@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 from flask_restful import Api
 from pymongo import MongoClient
@@ -8,14 +9,13 @@ app = Flask(__name__)
 api = Api(app)
 
 # secret
-app.config['JWT_SECRET_KEY'] = 'jwt-secret-string' # TODO env
+app.config['JWT_SECRET_KEY'] =  os.environ['jwt_secret']
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
 app.config['JWT_REFRESH_TOKEN_EXPIRES'] = False
 jwt = JWTManager(app)
 
 # db
-# TODO all the indexes
-client = MongoClient('localhost:27017')
+client = MongoClient(os.environ['mongo']) # TODO env
 db = client.ciabatta
 
 import views, resources

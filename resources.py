@@ -20,17 +20,17 @@ class UserRegistration(Resource):
     def post(self):
         d = sup.parse_args()
         new_user = {
-            'username': d['username'],
+            'userName': d['userName'],
             'password': sha256.hash(d['password']),
             'phoneNumber': d['phoneNumber'],
             'address': d['address']
         }
         try:
             db.users.insert_one(new_user)
-            access_token = create_access_token(identity=d['username'])
-            refresh_token = create_refresh_token(identity=d['username'])
+            access_token = create_access_token(identity=d['userName'])
+            refresh_token = create_refresh_token(identity=d['userName'])
             return {
-                'message': 'User {} was created'.format(d['username']),
+                'message': 'User {} was created'.format(d['userName']),
                 'access_token': access_token,
                 'refresh_token': refresh_token
             }
